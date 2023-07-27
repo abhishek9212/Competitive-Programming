@@ -1,0 +1,19 @@
+// to get any build system file's content in sublime, just go to tools->command pallete--> type vpf(view package file) and select it, then give file name or extension of the file
+
+{
+	// "target": "terminus_exec",
+	// "cancel": "terminus_exec_build",
+
+	"shell_cmd": "g++ -std=c++17 \"${file}\" -o \"${file_path}/${file_base_name}\"",
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+	"working_dir": "${file_path}",
+	"selector": "source.c++",
+
+	"variants":
+	[
+		{
+			"name": "Run",
+			"shell_cmd": "g++ -std=c++17 \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\""
+		}
+	]
+}
